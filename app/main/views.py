@@ -1,18 +1,17 @@
 from flask import render_template,redirect ,url_for
-from app.main import app
+from . import main
 
-app.config['SECRET_KEY'] = 'aSKh3r'
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/login')
+@main.route('/login')
 def login():
     return render_template('login.html')
 
-@app.route('/signup')
+@main.route('/signup')
 def signup():
     return render_template('signup.html')
     

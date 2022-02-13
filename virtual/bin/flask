@@ -1,4 +1,4 @@
-#!/home/marc/projects/flask/FIP3/virtual/bin/python
+#!/home/marc/projects/flask/FIP3/virtual/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
