@@ -1,5 +1,5 @@
 from flask import render_template,redirect ,url_for
-from app import app
+from app.main import app
 
 app.config['SECRET_KEY'] = 'aSKh3r'
 

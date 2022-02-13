@@ -1,15 +1,12 @@
-class User:
-    """
-    Init method that helps defie properties of our objects
-    """
-    """
-    ARGS:
-        firstName: Users first name
-        lastNmae: Users last name
-        email: Users email address
-        password: Users password
-        password2: Password confirmation
-    """
+from . import db
+class User(db.Model):
+
+    __tablename__= 'users'
+    id = db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(255))
+    
+    def __repr__(self):
+        return f'User{self.username}'
     #class variable for user data
     user_email=[]
     user_password=[]

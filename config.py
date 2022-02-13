@@ -15,3 +15,8 @@ class Development(Config):
     Development configuration
     """
     DEBUG = True
+
+config_options = {
+    'development': Development ,
+    'production': Production
+}
