@@ -1,18 +1,9 @@
-from crypt import methods
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import InputRequired
+from wtforms import TextAreaField,SubmitField 
+from wtforms.validators import Email,EqualTo, InputRequired
+from ..models import User
 
-class SignUpForm(FlaskForm):
 
-    first_name = StringField('First Name', validators=[InputRequired()])
-    last_name = StringField('Last Name', validators=[InputRequired()])
-    email = StringField('Email', validators=[InputRequired()])
-    password=StringField('Password', validators=[InputRequired()])
-    password2=StringField('Confirm Password ', validators=[InputRequired()])
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [InputRequired()])
     submit = SubmitField('Submit')
-
-class LogInForm(FlaskForm):
-     email = StringField('Email', validators=[InputRequired()])
-     password=StringField('Password', validators=[InputRequired()])
-     submit = SubmitField('Submit')
