@@ -1,0 +1,17 @@
+.car{
+    padding: 10%;
+}
+.baan > img{
+    height: 60vh;
+    margin: 0;
+    border: 0;
+}
+.baan{
+    margin: 0;
+    border: 0;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    right: 11px;
+    bottom: 30px;
+}
