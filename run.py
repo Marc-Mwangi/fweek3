@@ -6,8 +6,7 @@ from flask_login import LoginManager
 
 from app.models import User
 
-app = create_app('development')
-
+app = create_app('production')
 app.config.update(dict(
     SECRET_KEY="powerful secretkey",
     WTF_CSRF_SECRET_KEY="a csrf secret key"

@@ -5,6 +5,7 @@
 </head>
 
 {% block content %}
+
 <div class="container">
     <div class="row">
     <!-- displaying  Username-->
@@ -33,12 +34,13 @@
       {{wtf.quick_form(form)}}
 
       <div class="car">
-        {%for i in range(1, 4)%}
+        {%for i in range(1, 10)%}
         <div class="card" >
             <div class="card-body">
                 <h2 class="card-title">User Name:{{pitches[i].u_name}}</h2>
                 <p class="card-text">Pitch: {{pitches[i]}}</p>
                 <p class="card-text">Upvote    Downvote</p>
+                {{lenght}}
                 
             </div>
         </div>

@@ -26,12 +26,12 @@ def profile(uname):
     db.session.commit()
     pitches = Pitches.query.filter_by( u_name = use).all()
     
-    length= len(pitches)
+    
     if user is None:
         abort(404)
     
 
-    return render_template("profile/profile.html",length=length, user = user, pitches= pitches, form = form)
+    return render_template("profile/profile.html", user = user, pitches= pitches, form = form)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
