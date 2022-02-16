@@ -1,12 +1,21 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
+<head>
+    <link rel="stylesheet" href="../../static/auth.css">
+  </head>
+
 {% block content %}
 <div class="container">
 <div class="row">
 <div class="col-md-2"> </div>
 <div class="col-md-8">
+    <div class="wrapper">
+        <br><br><br>
+        <div class="text-center mt-4 name"> First Impressions </div>
+        {{wtf.quick_form(registration_form)}}
+    </div>
 
-{{wtf.quick_form(registration_form)}}
+
 
 </div>
 <div class="col-md-2"></div>

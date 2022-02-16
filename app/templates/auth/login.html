@@ -1,5 +1,7 @@
 {% import 'bootstrap/wtf.html' as wtf%}
-
+<head>
+  <link rel="stylesheet" href="../../static/auth.css">
+</head>
 {% block content %}
 <div class="container"> 
     <div class="row">
@@ -12,8 +14,11 @@
         {{ message }}
         </div>
       {% endfor %}
-      <!-- Login form -->
-      {{wtf.quick_form(login_form)}}
+      <div class="wrapper">
+       <br><br><br>
+        <div class="text-center mt-4 name"> First Impressions </div>
+        {{wtf.quick_form(login_form)}}
+        
       <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
      </div>
      <div clas="col-md-2"> </div>
