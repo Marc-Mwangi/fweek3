@@ -1,8 +1,8 @@
 from flask import render_template,redirect ,url_for, abort
 from . import main
 from flask_login import login_required
-from ..models import  User
-from .forms import UpdateProfile
+from ..models import  User,Pitches
+from .forms import UpdateProfile,PitchesForm
 from .. import db
 
 
@@ -10,17 +10,27 @@ from .. import db
 @main.route('/')
 @login_required
 def index():
-    return render_template('index.html')
+    pitches = Pitches.query.all()
+    return render_template('index.html', pitches= pitches)
 
 
-@main.route('/user/<uname>')
+@main.route('/user/<uname>',methods = ['GET','POST'])
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
-
+    userid = user.id
+    use = user.username
+    form = PitchesForm()
+    p = Pitches(pitch= form.pitch.data, upvote= 0, downvote= 0 , u_name= use)
+    db.session.add(p)
+    db.session.commit()
+    pitches = Pitches.query.filter_by( u_name = use).all()
+    
+    length= len(pitches)
     if user is None:
         abort(404)
+    
 
-    return render_template("profile/profile.html", user = user)
+    return render_template("profile/profile.html",length=length, user = user, pitches= pitches, form = form)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required

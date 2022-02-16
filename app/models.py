@@ -7,9 +7,11 @@ class User(UserMixin,db.Model):
 
     __tablename__= 'users'
     id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(255), index= True)
+    username =db.Column(db.String(255)) 
     email = db.Column(db.String(255),unique = True,index = True)
     pass_secure = db.Column(db.String(255))
+    pitches= db.relationship('Pitches', backref ='user')
+
     @property
     def password(self):
             raise AttributeError('You cannot read the password attribute')
@@ -33,5 +35,18 @@ class User(UserMixin,db.Model):
     
     def __repr__(self):
         return f'User{self.username}'
+
+class Pitches(db.Model):
+
+        __tablename__="pitches"
+        id = db.Column(db.Integer, primary_key = True)
+        pitch=db.Column(db.String(255), index= True)
+        upvote= db.Column(db.Integer, index = True)
+        downvote= db.Column(db.Integer, index = True)
+        user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
+        u_name=db.Column(db.String(255), index= True)
+        def __repr__(self):
+                return f'User{self.pitch}'
+
 
 

@@ -1,3 +1,6 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+{% extends 'base.html'%}
+{% block content %}
 <div class="container">
     <div class="row">
     <!-- displaying  Username-->
@@ -13,6 +16,7 @@
       </div>
     
       <!--Display profile photo-->
+
       <div class="col-md-4">
     
         {% if user.profile_pic_path %}
@@ -24,5 +28,8 @@
         <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
         {% endif %}
       </div>
+      {{wtf.quick_form(form)}}
+      {{pitches}}
     </div>
     </div>
+    {% endblock %}
