@@ -11,7 +11,8 @@ from .. import db
 @login_required
 def index():
     pitches = Pitches.query.all()
-    return render_template('index.html', pitches= pitches)
+    name= pitches[1].u_name
+    return render_template('index.html', pitches= pitches, name= name)
 
 
 @main.route('/user/<uname>',methods = ['GET','POST'])
