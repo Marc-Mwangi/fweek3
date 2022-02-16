@@ -1,4 +1,4 @@
-# NEWS WEBSITE
+# First Impressions Matter
 ## AUTHOR: MARC MAINA MWANGI
 ## DATE 30/1/2022
 
