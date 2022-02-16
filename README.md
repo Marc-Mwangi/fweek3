@@ -3,7 +3,7 @@
 ## DATE 16/2/2022
 
 ## DESCRIPTION
-The objective of this project was design a website with certain api functionalitites. The website cconsumes data from an API the stores news data and presents it to users after some data manipulation.
+
 
 ## TECHNOLOGY USED
 I used visual studio to code the project using mostly HTML, CSS for front end anf Python's Flask for backend functions.
