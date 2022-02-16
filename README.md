@@ -1,6 +1,6 @@
 # First Impressions Matter
 ## AUTHOR: MARC MAINA MWANGI
-## DATE 30/1/2022
+## DATE 16/2/2022
 
 ## DESCRIPTION
 The objective of this project was design a website with certain api functionalitites. The website cconsumes data from an API the stores news data and presents it to users after some data manipulation.
